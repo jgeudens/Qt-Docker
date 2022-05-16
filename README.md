@@ -51,7 +51,10 @@ New command style: https://medium.com/swlh/setting-up-an-ubuntu-20-04-docker-con
 
 * Show saved docker containers
 
-  > * ```sudo docker ps```
+  > * ```sudo docker ps -a```
+
+* Remove container
+  * ```sudo docker rm [container name]```
 
 ### Checkout source of project
 
@@ -73,13 +76,21 @@ Test
 sudo docker run --name qt-linux -it --entrypoint "/bin/bash" jgeudens/qt-linux
 
 Tag
-sudo docker image tag jgeudens/qt-linux jgeudens/qt-linux:5.15.2_build_1
+sudo docker image tag jgeudens/qt-linux jgeudens/qt-linux:6.2.2_build_2
 
 Push
 sudo docker push jgeudens/qt-linux
 
 Or with version tag
-sudo docker push jgeudens/qt-linux:5.15.2_build_1
+sudo docker push jgeudens/qt-linux:6.2.2_build_2
 
+```
+
+Track down missing dependencies: 
+
+Error shows libqxcb.so
+
+```
+ldd /opt/qt/5.15.2/gcc_64/plugins/platforms/libqxcb.so  | grep "not found"
 ```
 
