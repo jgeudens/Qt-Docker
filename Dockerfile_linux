@@ -6,6 +6,7 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     cmake \
     python3 \
     python3-pip \
+    python3-venv \
     build-essential \
 	  ninja-build \
 	  curl \
@@ -17,7 +18,10 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     libxcb-* \
     libxkbcommon-x11-0 \
     libegl-dev \
-    libcups2
+    libcups2 \
+    latexmk \
+    texlive-latex-recommended \
+    texlive-latex-extra
 
 RUN pip3 install aqtinstall
 
