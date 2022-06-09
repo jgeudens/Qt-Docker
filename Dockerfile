@@ -31,8 +31,8 @@ ENV DISPLAY=:0
 
 RUN pip3 install aqtinstall
 
-ARG QT=6.2.2
-ARG QT_MODULES="qtserialbus qtserialport"
+ARG QT=5.15.2
+ARG QT_MODULES=
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
 ARG QT_ARCH=gcc_64
@@ -42,6 +42,7 @@ ENV PATH /opt/qt/${QT}/${QT_ARCH}/bin:$PATH
 ENV QT_PLUGIN_PATH /opt/qt/${QT}/${QT_ARCH}/plugins/
 ENV QML_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
 ENV QML2_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
+ENV CMAKE_PREFIX_PATH /opt/qt/${QT}/${QT_ARCH}/lib/cmake/Qt5
 
 COPY start.sh start.sh
 CMD ./start.sh
