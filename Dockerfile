@@ -8,12 +8,12 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     python3-pip \
     python3-venv \
     build-essential \
-	  ninja-build \
-	  curl \
-	  gcovr \
-	  mesa-common-dev \
-	  libglu1-mesa-dev \
-	  libglib2.0-0 \
+    ninja-build \
+    curl \
+    gcovr \
+    mesa-common-dev \
+    libglu1-mesa-dev \
+    libglib2.0-0 \
     fontconfig \
     libxcb-* \
     libxkbcommon-x11-0 \
@@ -21,7 +21,13 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     libcups2 \
     latexmk \
     texlive-latex-recommended \
-    texlive-latex-extra
+    texlive-latex-extra \
+    xvfb \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+# Configure important environment variables required for the application under test
+# to access the virtual display created by Xvfb.
+ENV DISPLAY=:0
 
 RUN pip3 install aqtinstall
 
@@ -36,4 +42,6 @@ ENV PATH /opt/qt/${QT}/${QT_ARCH}/bin:$PATH
 ENV QT_PLUGIN_PATH /opt/qt/${QT}/${QT_ARCH}/plugins/
 ENV QML_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
 ENV QML2_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
-ENV CMAKE_PREFIX_PATH /opt/qt/${QT}/${QT_ARCH}/lib/cmake/Qt5
+
+COPY start.sh start.sh
+CMD ./start.sh

@@ -54,6 +54,7 @@ New command style: https://medium.com/swlh/setting-up-an-ubuntu-20-04-docker-con
   > * ```sudo docker ps -a```
 
 * Remove container
+  
   * ```sudo docker rm [container name]```
 
 ### Checkout source of project
@@ -70,7 +71,7 @@ https://docs.docker.com/docker-hub/
 
 ```
 Build
-sudo docker build -t jgeudens/qt-linux - < Dockerfile_linux
+sudo docker build -t jgeudens/qt-linux .
 
 Test
 sudo docker run --name qt-linux -it --entrypoint "/bin/bash" jgeudens/qt-linux
