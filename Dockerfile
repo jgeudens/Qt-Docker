@@ -31,7 +31,7 @@ ENV DISPLAY=:0
 
 RUN pip3 install aqtinstall
 
-ARG QT=6.4.1
+ARG QT=6.4.3
 ARG QT_MODULES="qtserialbus qtserialport"
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
