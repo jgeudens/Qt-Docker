@@ -38,7 +38,7 @@ ENV QT_QPA_PLATFORM=offscreen
 
 RUN pip3 install aqtinstall
 
-ARG QT=6.5.3
+ARG QT=6.6.3
 ARG QT_MODULES="qtserialbus qtserialport"
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
