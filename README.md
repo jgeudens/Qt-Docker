@@ -46,7 +46,7 @@ New command style: https://medium.com/swlh/setting-up-an-ubuntu-20-04-docker-con
 * Start docker container of latest ubuntu
 
   * ```bash
-    sudo docker run --name ubuntu-build -it --entrypoint "/bin/bash" ubuntu:20.04
+    sudo docker run --name ubuntu-build -it --entrypoint "/bin/bash" ubuntu:22.04
     ```
 
 * Show saved docker containers
@@ -65,7 +65,7 @@ New command style: https://medium.com/swlh/setting-up-an-ubuntu-20-04-docker-con
 
 ```bash
 cd /home/
-git clone --depth=50 --branch=master https://github.com/jgeudens/ModbusScope.git ModbusScope
+git clone --depth=50 --branch=master https://github.com/ModbusScope/ModbusScope.git ModbusScope
 cd ModbusScope
 ```
 
@@ -91,7 +91,13 @@ sudo docker push jgeudens/qt-linux:6.2.2_build_2
 
 ```
 
-Track down missing dependencies:
+## Troubleshooting
+
+### Python package system-wide
+
+https://leimao.github.io/blog/Docker-Python-Setup/
+
+### Track down missing dependencies:
 
 Error shows libqxcb.so
 
