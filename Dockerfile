@@ -23,7 +23,6 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     libegl-dev \
     libcups2 \
     latexmk \
-    texlive-latex-recommended \
     texlive-latex-extra \
     && apt-get -yq autoremove \
     && apt-get -yq autoclean \
