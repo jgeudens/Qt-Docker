@@ -24,6 +24,8 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     libcups2 \
     latexmk \
     texlive-latex-extra \
+    texlive-fonts-extra \
+    texlive-formats-extra \
     && apt-get -yq autoremove \
     && apt-get -yq autoclean \
     && apt-get -yq clean \
