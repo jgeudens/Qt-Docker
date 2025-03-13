@@ -7,11 +7,11 @@ Some paths are already configured for this specific toolchain.
 
 * Folder for Qt binaries is added to path
 
-  ` ENV PATH /opt/qt/${QT}/${QT_ARCH}/bin:$PATH`
+  `ENV PATH /opt/qt/${QT}/${QT_ARCH}/bin:$PATH`
 
 * Some Qt specific paths
 
-  ```
+  ```bash
   ENV QT_PLUGIN_PATH /opt/qt/${QT}/${QT_ARCH}/plugins/
   ENV QML_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
   ENV QML2_IMPORT_PATH /opt/qt/${QT}/${QT_ARCH}/qml/
@@ -33,7 +33,7 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 * Test:
 
-  * ```
+  * ```bash
     sudo docker run hello-world
     ```
 
@@ -45,23 +45,27 @@ New command style: https://medium.com/swlh/setting-up-an-ubuntu-20-04-docker-con
 
 * Start docker container of latest ubuntu
 
-  * ```
-    sudo docker run --name ubuntu-build -it --entrypoint "/bin/bash" ubuntu:20.04
+  * ```bash
+    sudo docker run --name ubuntu-build -it --entrypoint "/bin/bash" ubuntu:22.04
     ```
 
 * Show saved docker containers
 
-  > * ```sudo docker ps -a```
+  * ```bash
+    sudo docker ps -a
+    ```
 
 * Remove container
   
-  * ```sudo docker rm [container name]```
+  * ```bash
+    sudo docker rm [container name]
+    ```
 
 ### Checkout source of project
 
-```
+```bash
 cd /home/
-git clone --depth=50 --branch=master https://github.com/jgeudens/ModbusScope.git ModbusScope
+git clone --depth=50 --branch=master https://github.com/ModbusScope/ModbusScope.git ModbusScope
 cd ModbusScope
 ```
 
@@ -69,29 +73,34 @@ cd ModbusScope
 
 https://docs.docker.com/docker-hub/
 
-```
-Build
+```bash
+# Build
 sudo docker build -t jgeudens/qt-linux .
 
-Test
+# Test
 sudo docker run --name qt-linux -it --entrypoint "/bin/bash" jgeudens/qt-linux
 
-Tag
+# Tag
 sudo docker image tag jgeudens/qt-linux jgeudens/qt-linux:6.2.2_build_2
 
-Push
+# Push
 sudo docker push jgeudens/qt-linux
 
-Or with version tag
+# Or with version tag
 sudo docker push jgeudens/qt-linux:6.2.2_build_2
 
 ```
 
-Track down missing dependencies: 
+## Troubleshooting
+
+### Python package system-wide
+
+https://leimao.github.io/blog/Docker-Python-Setup/
+
+### Track down missing dependencies:
 
 Error shows libqxcb.so
 
-```
+```bash
 ldd /opt/qt/5.15.2/gcc_64/plugins/platforms/libqxcb.so  | grep "not found"
 ```
-
