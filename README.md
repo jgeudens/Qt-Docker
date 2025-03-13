@@ -83,10 +83,7 @@ sudo docker run --name qt-linux -it --entrypoint "/bin/bash" jgeudens/qt-linux
 # Tag
 sudo docker image tag jgeudens/qt-linux jgeudens/qt-linux:6.2.2_build_2
 
-# Push
-sudo docker push jgeudens/qt-linux
-
-# Or with version tag
+# Push with version tag
 sudo docker push jgeudens/qt-linux:6.2.2_build_2
 
 ```
