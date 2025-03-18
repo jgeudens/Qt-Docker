@@ -12,6 +12,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     build-essential \
     ninja-build \
     curl \
+    unzip \
     file \
     gcovr \
     mesa-common-dev \
