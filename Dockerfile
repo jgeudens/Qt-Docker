@@ -57,5 +57,6 @@ ENV DISPLAY=:0
 ENV QT_QPA_PLATFORM=offscreen
 
 COPY start.sh start.sh
+RUN chmod +x start.sh
 
-CMD ./start.sh
+CMD ["./start.sh"]
