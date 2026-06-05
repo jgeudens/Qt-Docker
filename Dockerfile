@@ -8,6 +8,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     git \
     wget \
     cmake \
+    gdb \
     python3-full \
     build-essential \
     ninja-build \
@@ -23,6 +24,8 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     libxkbcommon-x11-0 \
     libegl-dev \
     libcups2-dev \
+    clang-tidy \
+    clazy \
     && apt-get -yq autoremove \
     && apt-get -yq autoclean \
     && apt-get -yq clean \
