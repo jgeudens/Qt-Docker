@@ -53,6 +53,7 @@ ENV PATH=/opt/qt/${QT}/${QT_ARCH_PATH}/bin:$PATH
 ENV QT_PLUGIN_PATH=/opt/qt/${QT}/${QT_ARCH_PATH}/plugins/
 ENV QML_IMPORT_PATH=/opt/qt/${QT}/${QT_ARCH_PATH}/qml/
 ENV QML2_IMPORT_PATH=/opt/qt/${QT}/${QT_ARCH_PATH}/qml/
+ENV VSCODE_QT_INSTALLATION=/opt/qt/${QT}/${QT_ARCH_PATH}
 
 # Configure important environment variables required for the application under test
 # to access the virtual display created by Xvfb.
