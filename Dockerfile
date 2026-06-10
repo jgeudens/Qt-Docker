@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 ARG PYTHON_VENV_PATH=/python/venv
 
@@ -16,16 +16,15 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     unzip \
     file \
     gcovr \
-    mesa-common-dev \
-    libglu1-mesa-dev \
-    libglib2.0-0 \
-    fontconfig \
-    libxcb-* \
-    libxkbcommon-x11-0 \
-    libegl-dev \
-    libcups2-dev \
     clang-tidy \
     clazy \
+    clang-format \
+    \
+    mesa-common-dev \
+    libegl-dev \
+    libcups2-dev \
+    libxkbcommon-x11-0 \
+    libxcb-* \
     && apt-get -yq autoremove \
     && apt-get -yq autoclean \
     && apt-get -yq clean \
